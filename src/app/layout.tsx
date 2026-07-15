@@ -13,10 +13,42 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://naumanhadi.io";
+const title = "Nauman Hadi | Enterprise AI & Infrastructure Leader";
+const description =
+  "Enterprise AI, cloud platforms, and large-scale network modernization leadership from Nauman Hadi.";
+
 export const metadata: Metadata = {
-  title: "Nauman Hadi | Enterprise AI & Infrastructure Leader",
-  description:
-    "Enterprise AI, cloud platforms, and large-scale network modernization leadership from Nauman Hadi.",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  keywords: [
+    "Nauman Hadi",
+    "Enterprise AI",
+    "Technical Program Management",
+    "Product Leadership",
+    "Open RAN",
+    "Network Modernization",
+  ],
+  authors: [{ name: "Nauman Hadi" }],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    title,
+    description,
+    siteName: "Nauman Hadi",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
+  robots: { index: true, follow: true },
+};
+
+export const viewport = {
+  themeColor: "#020617",
 };
 
 export default function RootLayout({
