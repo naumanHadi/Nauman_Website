@@ -1,3 +1,5 @@
+import { ChatPanel } from "@/components/chat-panel";
+
 const stats = [
   {
     title: "Enterprise AI & Product",
@@ -391,6 +393,10 @@ export default function Home() {
               Request a walkthrough ↗
             </a>
           </div>
+        </section>
+
+        <section className="grid gap-6 lg:grid-cols-[1fr]">
+          <ChatPanel />
         </section>
       </div>
     </main>
