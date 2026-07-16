@@ -40,7 +40,15 @@ export function SiteNav() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-2 md:flex">
+          <a
+            href={site.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/5"
+          >
+            LinkedIn ↗
+          </a>
           <a
             href={`mailto:${site.email}`}
             className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5"
@@ -78,8 +86,17 @@ export function SiteNav() {
               </Link>
             ))}
             <a
+              href={site.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
+              className="mt-1 rounded-lg border border-white/15 px-3 py-2 text-center text-sm font-semibold text-slate-200"
+            >
+              LinkedIn ↗
+            </a>
+            <a
               href={`mailto:${site.email}`}
-              className="mt-1 rounded-lg bg-white px-3 py-2 text-center text-sm font-semibold text-slate-900"
+              className="rounded-lg bg-white px-3 py-2 text-center text-sm font-semibold text-slate-900"
             >
               Contact
             </a>
