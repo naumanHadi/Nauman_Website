@@ -20,72 +20,88 @@ export const site = {
 export type NavItem = { label: string; href: string };
 
 export const nav: NavItem[] = [
-  { label: "Experience", href: "/experience" },
   { label: "Ventures", href: "/ventures" },
   { label: "Digital Twin", href: "/digital-twin" },
 ];
 
-export type Pillar = {
-  key: string;
-  eyebrow: string;
-  title: string;
-  blurb: string;
-  href: string;
-  points: string[];
+// ---- Narrative spine: the single idea every section traces back to ----
+
+export const spine = {
+  hero:
+    "I take ambiguous, large-scale problems and turn them into systems that work — in AI products, telecom infrastructure, and my own ventures.",
+  statement:
+    "Telecom infrastructure, AI products, a logistics company, capital markets — four different arenas, one skill: take something ambiguous and large, and impose order and scale on it. I'm a zero-to-one builder who also knows how to run things at national scale once they exist.",
 };
 
-export const pillars: Pillar[] = [
+// Same skill, proven in four arenas. First line names the arena; the body
+// shows the pattern (ambiguity → system, zero-to-one → scale) at work.
+export type Arena = {
+  key: string;
+  arena: string;
+  pattern: string;
+  body: string;
+  href: string;
+};
+
+export const arenas: Arena[] = [
   {
     key: "ai",
-    eyebrow: "Flagship",
-    title: "AI & Product Leadership",
-    blurb:
-      "From infrastructure to multi-agent systems to commercialized enterprise AI — I understand how AI moves from the data center to production revenue.",
-    href: "/experience",
-    points: [
-      "Full AI stack: infra → platforms → data → models → agents → apps",
-      "Naavik: agentic chat platform, +35% engineering productivity",
-      "Enterprise AI commercialization ($13M+ POs)",
-    ],
+    arena: "AI Products",
+    pattern: "Blank page → enterprise revenue",
+    body: "Envisioned Naavik from nothing and shipped it into production — a chat-based agentic platform that lifted engineering productivity ~35% at 90% accuracy, then commercialized it into ~$13M in enterprise POs.",
+    href: "#proof",
   },
   {
-    key: "scale",
-    eyebrow: "Scale",
-    title: "Infrastructure at AI Scale",
-    blurb:
-      "Delivered nationwide, cloud-native infrastructure at a scale comparable to modern AI rollouts — with the governance to keep it predictable.",
-    href: "/experience",
-    points: [
-      "World's first cloud-native Open RAN: 7,300+ sites, 80M POPs",
-      "AT&T ~$14B modernization across 28,000+ sites",
-      "0→1 analytics platform (Python + Power BI)",
-    ],
+    key: "infra",
+    arena: "Telecom Infrastructure",
+    pattern: "Zero-to-one tooling, then national scale",
+    body: "Built program analytics from 0→1, then ran the machine: AT&T's ~$14B modernization across 28,000+ sites and the world's first cloud-native Open RAN across 7,300+ sites — order imposed on massive, messy systems.",
+    href: "#proof",
   },
   {
     key: "ventures",
-    eyebrow: "Builder",
-    title: "Ventures — Realty.ai & Float Fleet",
-    blurb:
-      "A founder who ships: Realty.ai, a multi-agent firm that automates real estate paperwork, and Float Fleet, a company built, scaled, and exited through COVID.",
+    arena: "My Ventures",
+    pattern: "Founded, scaled, exited",
+    body: "Same instinct, my own risk: Realty.ai, a multi-agent firm that automates real estate paperwork, and Float Fleet, a logistics company I started during COVID, scaled to a five-truck fleet, and exited.",
     href: "/ventures",
-    points: [
-      "Realty.ai: multi-agent paperwork automation — agents now have agents",
-      "Float Fleet: 0→1 founder, scaled and exited",
-      "Operator's instinct backed by execution",
-    ],
   },
   {
-    key: "investing",
-    eyebrow: "Investing",
-    title: "Markets & Options",
-    blurb:
-      "Long-term compounding, business analysis, and options strategy — shared through short-form video and disciplined risk management.",
+    key: "markets",
+    arena: "Capital Markets",
+    pattern: "Judgment, systematized",
+    body: "12+ years investing, where I built multi-agent systems to take emotion out of the loop and tested an options strategy with technical support — turning a chaotic domain into a disciplined process.",
     href: "/ventures#investing",
-    points: [
-      "Options strategy explained on Instagram",
-      "Index & long-term investing, compounding, risk",
-      "Business-analysis mindset applied to markets",
-    ],
+  },
+];
+
+// Headline proof points. Every number carries a one-line qualifier
+// (timeframe + my specific role), verified against the résumé.
+export type Stat = {
+  value: string;
+  label: string;
+  note: string;
+};
+
+export const stats: Stat[] = [
+  {
+    value: "~$13M",
+    label: "Enterprise AI POs closed",
+    note: "AT&T + Axiata, 2025 — as product & solutions lead at AiRa (~$8M + ~$5M)",
+  },
+  {
+    value: "~$14B",
+    label: "AT&T modernization program",
+    note: "2023–25 — I directed execution across 28,000+ sites",
+  },
+  {
+    value: "7,300+",
+    label: "Cloud-native Open RAN sites",
+    note: "2019–23 at Echostar — world's first, serving 80M POPs",
+  },
+  {
+    value: "15+ yrs",
+    label: "Product & program leadership",
+    note: "Telecom infrastructure through enterprise AI",
   },
 ];
 
@@ -101,75 +117,54 @@ export type StackLayer = {
 export const aiStack: StackLayer[] = [
   {
     id: "infrastructure",
-    name: "Infrastructure",
-    summary: "Large-scale, cloud-native, high-availability systems.",
+    name: "Infrastructure — Physical & Data Layer",
+    summary: "The compute, storage, and data foundation everything runs on.",
     detail: [
-      "Delivered the world's first cloud-native Open RAN network across 7,300+ production sites serving 80M points of presence.",
-      "Directed nationwide telecom infrastructure: transport, fiber, commercial & backup power, commissioning.",
-      "Distributed, high-availability production systems at a scale comparable to modern AI infrastructure rollouts.",
-    ],
-  },
-  {
-    id: "platforms",
-    name: "Platforms",
-    summary: "Enterprise platforms for automation & operational analytics.",
-    detail: [
-      "Built an in-house reporting & analytics toolset from 0→1 (Python + Power BI) for a 28,000-site portfolio.",
-      "Workflow orchestration and enterprise intelligence enabling predictable, data-driven execution.",
-      "Operational platforms that turned raw program data into executive decisions.",
-    ],
-  },
-  {
-    id: "data",
-    name: "Data & Intelligence",
-    summary: "Turning telemetry and signals into decisions.",
-    detail: [
-      "On-demand telemetry, root-cause analysis, and AI-driven recommendations unified in a single interface.",
-      "Knowledge graphs, vector databases, and SQL-driven insight at enterprise scale.",
-      "Forecasting and readiness models that de-risk large deployments.",
-    ],
-  },
-  {
-    id: "models",
-    name: "Foundation Models / AI",
-    summary: "Generative & enterprise AI, RAG, and copilots.",
-    detail: [
-      "LLM/RAG on Microsoft Azure; LangChain/LangGraph; prompt engineering; LoRA/QLoRA.",
-      "Enterprise copilots and AI-assisted application generation.",
-      "Grounded, accurate AI experiences tuned for enterprise trust (90% accuracy on Naavik).",
+      "Cloud-native, high-availability compute and the physical/data layer the whole stack sits on.",
+      "Data pipelines, storage, and telemetry ingestion at enterprise scale.",
+      "Proven on large-scale, cloud-native network infrastructure serving tens of millions of endpoints.",
     ],
   },
   {
     id: "agents",
-    name: "Multi-Agent Systems",
-    summary: "Orchestration, tool-calling, and human-in-the-loop.",
+    name: "Agents & Models — Where the intelligence lives",
+    summary: "Sensing, perception, forecasting, and recommendation — powered by models.",
     detail: [
-      "Agent orchestration with planning and knowledge agents across enterprise workflows.",
-      "Tool-calling and agent collaboration with human-in-the-loop controls.",
-      "Naavik: cut application development cycles from 3–4 months to days.",
+      "Agents for sensing, perception, forecasting, and recommendation — orchestrated with planning and human-in-the-loop controls.",
+      "Powered by models: LLM/RAG (Azure, LangChain/LangGraph) plus classical ML — Random Forest, Gradient Boosting, XGBoost, AdaBoost, Isolation Forest, K-Means, and DNNs.",
+      "Dataset cleaning and feature engineering that make the models production-ready.",
     ],
   },
   {
-    id: "apps",
-    name: "Enterprise Applications",
-    summary: "Products customers deploy in production.",
+    id: "applications",
+    name: "Applications — Subscribe to the agents",
+    summary: "Enterprise apps that consume agent outputs and deliver value.",
     detail: [
-      "Owned the full customer lifecycle: requirements → engineering → delivery → production.",
-      "Envisioned and executed Naavik end-to-end at a Series-B AI startup.",
-      "+35% engineering productivity for enterprise customers.",
+      "Applications subscribe to the agents and turn their intelligence into workflows users act on.",
+      "A chat-based interface unifying telemetry, root-cause analysis, recommendations, and app creation.",
+      "~35% engineering productivity gains at ~90% accuracy; app cycles cut from months to days.",
     ],
   },
   {
-    id: "commercialization",
-    name: "Commercialization",
-    summary: "From zero revenue to enterprise adoption.",
+    id: "visualization",
+    name: "Visualization — Telemetry, made legible",
+    summary: "Dashboards that surface all the telemetry across the stack.",
     detail: [
-      "Led enterprise engagements with AT&T and Axiata from discovery through production.",
-      "Closed ~$13M in combined enterprise purchase orders (~$8M and ~$5M).",
-      "Translated business requirements into technical roadmaps, SOWs, and commercial agreements.",
+      "Visualization layer surfacing telemetry from every layer for operators and executives.",
+      "Executive dashboards, readiness reviews, and operational governance.",
+      "Turned raw program data into decisions across large, multi-site portfolios.",
     ],
   },
 ];
+
+// The four layers build the product. Commercialization is what wraps it —
+// the layer Nauman operates across to turn the stack into revenue.
+export const stackFraming = {
+  build:
+    "Four layers build the product: Infrastructure → Agents & Models → Applications → Visualization.",
+  commercialization:
+    "Commercialization is what I do around the product — turning the stack into enterprise revenue through discovery, technical sales, SOWs, and production rollout (multiple millions in enterprise POs).",
+};
 
 // ---- Career (executive story, not chronological) ----
 
@@ -309,10 +304,10 @@ export const realtyAi = {
 
 export const floatFleet = {
   intro:
-    "Float Fleet Inc. started during COVID with a vision for autonomous trucking solutions, then pivoted into hands-on trucking operations — freight procurement, sales, and dedicated reefer and dry van service. I scaled it to a five-truck fleet and sold the operations in a successful exit.",
+    "Float Fleet Inc. is a logistics company I founded during COVID — starting with a vision for autonomous trucking technology, then pivoting into hands-on freight operations: freight procurement, sales, and dedicated reefer and dry van service. I scaled it to a five-truck fleet and sold the operations in a successful exit.",
   story: [
-    "Founded during COVID to pursue autonomous trucking solutions.",
-    "Pivoted to trucking operations: freight procurement and sales.",
+    "Founded during COVID around a vision for autonomous trucking technology.",
+    "Pivoted to freight operations: procurement and sales.",
     "Ran dedicated reefer and dry van service.",
     "Scaled the fleet to five trucks.",
     "Sold the operations as a successful exit.",

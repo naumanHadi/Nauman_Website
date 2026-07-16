@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div className="max-w-sm">
             <p className="text-lg font-semibold text-white">{site.name}</p>
-            <p className="mt-2 text-sm text-slate-400">{site.narrative}</p>
+            <p className="mt-2 text-sm text-slate-400">{site.role}</p>
           </div>
 
           <nav className="grid grid-cols-2 gap-x-10 gap-y-2 text-sm">

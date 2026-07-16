@@ -23,6 +23,7 @@ export default function VenturesPage() {
         <PageHeader
           eyebrow="Ventures"
           title="What I build outside enterprise work."
+          intro="Same throughline as everything else I do — take something ambiguous and large, and impose order and scale on it — only here the risk is mine: an AI firm for real estate, a logistics company I founded and exited, and how I approach capital markets."
         />
 
         {/* Realty.ai */}

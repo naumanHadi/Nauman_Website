@@ -25,7 +25,7 @@ export default function DigitalTwinPage() {
         <PageHeader
           eyebrow="Digital Twin"
           title="Ask me anything."
-          intro="An interactive twin grounded in my résumé and profile — spanning career, AI & product, Realty.ai, entrepreneurship, and investing."
+          intro="A twin grounded in my résumé and profile. Ask how the same skill — turning ambiguous, large-scale problems into systems that work — shows up across AI products, telecom infrastructure, my ventures, and the markets."
         />
 
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">

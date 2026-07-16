@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://naumanhadi.io";
 const title = "Nauman Hadi | AI Product Leader · Founder · Investor";
 const description =
-  "I build intelligent products, businesses, and investments that create long-term value — spanning enterprise AI, real estate tech, entrepreneurship, and investing.";
+  "I take ambiguous, large-scale problems and turn them into systems that work — across enterprise AI products, nationwide telecom infrastructure, and my own ventures.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
