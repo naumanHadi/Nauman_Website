@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SiteNav } from "@/components/site-nav";
+import { SiteFooter } from "@/components/site-footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://naumanhadi.io";
-const title = "Nauman Hadi | Enterprise AI & Infrastructure Leader";
+const title = "Nauman Hadi | AI Product Leader · Founder · Investor";
 const description =
-  "Enterprise AI, cloud platforms, and large-scale network modernization leadership from Nauman Hadi.";
+  "I build intelligent products, businesses, and investments that create long-term value — spanning enterprise AI, real estate tech, entrepreneurship, and investing.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -24,11 +26,14 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "Nauman Hadi",
+    "AI Product Leader",
     "Enterprise AI",
-    "Technical Program Management",
-    "Product Leadership",
+    "Multi-Agent Systems",
+    "Realty.ai",
+    "Float Fleet",
+    "Investing",
+    "Options Strategy",
     "Open RAN",
-    "Network Modernization",
   ],
   authors: [{ name: "Nauman Hadi" }],
   alternates: { canonical: "/" },
@@ -62,7 +67,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-slate-950 text-slate-50">
-        {children}
+        <SiteNav />
+        <div className="flex-1">{children}</div>
+        <SiteFooter />
       </body>
     </html>
   );
